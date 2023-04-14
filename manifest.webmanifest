@@ -1,7 +1,7 @@
 {
-    "name": "Smakowity.pl",
-    "short_name": "Smakowity.pl",
-    "description": "Food recipes and articles.",
+    "name": "Demo PWA App",
+    "short_name": "Demo PWA",
+    "description": "App to demo a basic PWA.",
     "icons": [{
             "src": "/android-chrome-192x192.png",
             "type": "image/png",
