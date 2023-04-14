@@ -1,0 +1,14 @@
+{
+    "description": "PWA Demo Page.",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "app-icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "name": "PWA Demo",
+    "short_name": "PWADemo",
+    "start_url": "./"
+}
