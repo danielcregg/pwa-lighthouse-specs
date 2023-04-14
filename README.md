@@ -1,5 +1,5 @@
 PWA (Progressive Web App) is a web application that works in a similar way to a native application installed on a desktop or mobile device.  
-This code meets all the minimum PWA requirements.
+This code meets all the Chrome Browser Lighthouse minimum PWA requirements.
 
 1. HTTPS enabled - This is necessary to register a service worker. You can get free certs at https://certbot.eff.org/.  
 2. Manifest file - This is a JSON file that determines the behavior of the application after its installation. It contains things like the application name, icon paths and start URL.  
