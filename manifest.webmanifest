@@ -1,14 +1,21 @@
 {
-    "description": "PWA Demo Page.",
-    "display": "standalone",
-    "icons": [
+    "name": "Smakowity.pl",
+    "short_name": "Smakowity.pl",
+    "description": "Food recipes and articles.",
+    "icons": [{
+            "src": "/android-chrome-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
         {
-            "src": "app-icon-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
+            "src": "/android-chrome-512x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
         }
     ],
-    "name": "PWA Demo",
-    "short_name": "PWADemo",
-    "start_url": "./"
+    "start_url": "/?source=pwa",
+    "display": "standalone",
+    "scope": "/",
+    "background_color": "#FFF",
+    "theme_color": "#FFF"
 }
