@@ -1,7 +1,6 @@
 const CACHE_NAME = 'smakowity-v1';
 const URLS_TO_CACHE = [
-    '/offline.html',
-    '/images/logo.png'
+    '/offline.html'
 ]
 
 self.addEventListener('install', function(event) {
