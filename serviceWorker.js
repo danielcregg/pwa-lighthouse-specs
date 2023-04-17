@@ -1,6 +1,7 @@
 const CACHE_NAME = 'pwa-cache';
 const URLS_TO_CACHE = [
-    '/'
+    '/*.php',
+    '/*.html'
 ]
 
 self.addEventListener('install', function(event) {
