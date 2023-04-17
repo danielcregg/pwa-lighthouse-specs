@@ -1,6 +1,6 @@
-const CACHE_NAME = 'smakowity-v1';
+const CACHE_NAME = 'pwa-cache';
 const URLS_TO_CACHE = [
-    '/offline.html'
+    '/'
 ]
 
 self.addEventListener('install', function(event) {
