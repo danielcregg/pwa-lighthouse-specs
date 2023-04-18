@@ -6,4 +6,4 @@ This code meets all the Chrome Browser Lighthouse minimum PWA requirements.
 3. Service Worker - This is a JavaScript file that is responsible for handling HTTPS requests and returning responses. Its purpose is to provide offline capabilities to the application.  
 
 This code is an updated version of the below code:
-https://paweldymek.com/en/post/pwa-minimum-requirements
+https://paweldymek.com/en/post/pwa-minimum-requirements  
