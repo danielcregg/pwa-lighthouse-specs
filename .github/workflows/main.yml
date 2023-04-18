@@ -18,4 +18,4 @@ jobs:
           known_hosts: unnecessary
       - name: Deploy website
         run: |
-          scp -r . azureuser@myVM:/path/to/destination
+          scp -r . azureuser@myVM:/var/www/html
