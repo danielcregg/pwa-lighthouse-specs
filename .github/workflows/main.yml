@@ -11,7 +11,10 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3.5.2
-
+    - name: Add host key to known_hosts
+      run: |
+        mkdir -p ~/.ssh
+        ssh-keyscan 68.219.107.109 >> ~/.ssh/known_hosts
     - name: Deploy to remote server
       run: |
         ssh azureuser@68.219.107.109 "cd /var/www/html && git pull"
