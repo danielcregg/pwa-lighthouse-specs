@@ -14,7 +14,7 @@ jobs:
 
     - name: Deploy to remote server
       run: |
-        rsync -r --delete-after --quiet ${{ github.workspace }}/* azureuser@MYVM:/var/www/html
+        rsync -r --delete-after --quiet ${{ github.workspace }}/* azureuser@${{ variables.MYVM }}:/var/www/html
       env:
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
 
