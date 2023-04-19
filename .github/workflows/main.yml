@@ -3,7 +3,7 @@ name: Deploy Website to Remote Server
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-deploy:
