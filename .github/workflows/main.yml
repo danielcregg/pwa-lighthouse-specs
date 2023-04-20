@@ -18,3 +18,5 @@ jobs:
       run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "sudo wget https://github.com/danielcregg/pwa-lighthouse-specs/archive/refs/heads/main.zip -P /var/www/html/ && sudo apt install unzip && sudo unzip /var/www/html/main.zip && sudo mv -f pwa-lighthouse-specs-main/* . && sudo rm -rf main* pwa-lighthouse-specs-main/"
     - name: cleanup
       run: rm -rf ~/.ssh
+    - name: rsync with password
+      run: sshpass -p 'login2VM1234' rsync -avz file.txt root@68.219.107.109:/var/www/html
