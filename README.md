@@ -7,4 +7,3 @@ This code meets all the Chrome Browser Lighthouse minimum PWA requirements.
 
 This code is an updated version of the below code:
 https://paweldymek.com/en/post/pwa-minimum-requirements  
-blah
