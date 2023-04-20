@@ -1,14 +1,11 @@
+name: Deploy to remote server
 on:
   push:
     branches:
       - main
-  workflow_dispatch:
-  
 jobs:
-  run_pull:
-    name: run pull
+  deploy:
     runs-on: ubuntu-latest
-    
     steps:
     - name: install ssh keys
       # check this thread to understand why its needed:
@@ -23,3 +20,21 @@ jobs:
       run: rsync -avz --delete ${{ github.workspace }}/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/html/
     - name: cleanup
       run: rm -rf ~/.ssh
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Copy files to remote server
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        source: "."
+        target: "/var/www/html"
+    - name: Execute deployment script on remote server
+      uses: appleboy/ssh-action@master
+      with:
+         host: ${{ secrets.SSH_HOST }}
+         username: ${{ secrets.SSH_USER }}
+         key: ${{ secrets.SSH_PRIVATE_KEY }}
+         script: |
+          ls /var/www/html
