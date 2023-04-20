@@ -15,6 +15,6 @@ jobs:
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
     - name: connect and pull
-      run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "sudo wget https://github.com/danielcregg/pwa-template/archive/refs/heads/master.zip -P /var/www/html/ && sudo apt install unzip && sudo unzip /var/www/html/master.zip && sudo mv -f pwa-template-master/* . && sudo rm -rf master.zip pwa-template-master/"
+      run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "sudo wget https://github.com/danielcregg/pwa-lighthouse-specs/archive/refs/heads/main.zip -P /var/www/html/ && sudo apt install unzip && sudo unzip /var/www/html/main.zip && sudo mv -f pwa-lighthouse-specs-main/* . && sudo rm -rf main* pwa-lighthouse-specs-main/"
     - name: cleanup
       run: rm -rf ~/.ssh
