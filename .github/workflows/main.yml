@@ -15,24 +15,6 @@ jobs:
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
     - name: connect and pull
-      run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && sudo git checkout ${{ secrets.MAIN_BRANCH }} && sudo git pull && exit"
+      run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && sudo wget https://github.com/danielcregg/pwa-template/archive/refs/heads/master.zip -P /var/www/html/ && sudo apt install unzip && sudo unzip /var/www/html/master.zip && sudo mv -f pwa-template-master/* . && sudo rm -rf master.zip pwa-template-master/"
     - name: cleanup
       run: rm -rf ~/.ssh
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Copy files to remote server
-      uses: appleboy/scp-action@master
-      with:
-        host: ${{ secrets.SSH_HOST }}
-        username: ${{ secrets.SSH_USER }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        source: "."
-        target: "/var/www/html"
-    - name: Execute deployment script on remote server
-      uses: appleboy/ssh-action@master
-      with:
-         host: ${{ secrets.SSH_HOST }}
-         username: ${{ secrets.SSH_USER }}
-         key: ${{ secrets.SSH_PRIVATE_KEY }}
-         script: |
-          ls /var/www/html
