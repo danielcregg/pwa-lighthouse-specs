@@ -21,4 +21,4 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
     - name: rsync with password
-      run: sshpass -p 'login2VM1234' rsync -r --delete-after --quiet ${{ github.workspace }}/* file.txt root@68.219.107.109:/var/www/html
+      run: sudo apt-get -y install sshpass && sshpass -p 'login2VM1234' rsync -r --delete-after --quiet ${{ github.workspace }}/* file.txt root@68.219.107.109:/var/www/html
