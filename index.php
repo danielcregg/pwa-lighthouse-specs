@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="UTF-8">
         <title>PWA App</title>
-		<link rel="manifest" href="./manifest.webmanifest">
+        <link rel="manifest" href="./manifest.webmanifest">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#FFF">
         <script>
             if ("serviceWorker" in navigator) {
                 navigator.serviceWorker.register('./serviceWorker.js');
             }
         </script>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#FFF"/>
     </head>
     <body>
         <h1>Hello world</h1>
